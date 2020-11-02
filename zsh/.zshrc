@@ -1,7 +1,7 @@
 # --------------- Credits ---------------
 # File:   .zshrc
 # Author: Gabriel Caussi
-# Source: https://github.com/gabrielcaussi/dotfiles/
+# Source: https://github.com/gabrielcaussi/.dotfiles/
 
 # --------------- Zsh settings ---------------
 
