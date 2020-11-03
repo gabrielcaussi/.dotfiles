@@ -151,6 +151,20 @@ Copy the font to the folder:
 $ cp ~/.dotfiles/fonts/Hack\ Regular\ Nerd\ Font\ Complete\ Mono.ttf ~/.local/share/fonts
 ```
 
+## Themes and Icons
+
+Install themes and icons:
+
+```zsh
+$ mkdir ~/.themes && mkdir ~/.icons
+
+$ cp ~/.dotfiles/.themes/WhiteSur-dark-alt ~/.themes
+
+$ cp ~/.dotfiles/.icons/Papirus ~/.icons
+
+$ cp ~/.dotfiles/.icons/Papirus-Dark ~/.icons
+```
+
 ## Live-server
 
 Install Live-server:
