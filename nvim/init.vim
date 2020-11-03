@@ -1,7 +1,7 @@
 " --------------- Credits ---------------
 " File:   init.vim
 " Author: Gabriel Caussi
-" Source: https://github.com/gabrielcaussi/dotfiles/
+" Source: https://github.com/gabrielcaussi/.dotfiles/
 "
 " --------------- Vim-Plug ---------------
 
@@ -122,4 +122,3 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
