@@ -46,18 +46,18 @@ $ node -v
 $ npm -v
 ```
 
-# Clone the repository
+## Clone the repository
 
 Clone the repository:
 
 ```bash
-$ git clone https://github.com/gabrielcaussi/dotfiles.git
+$ git clone https://github.com/gabrielcaussi/.dotfiles.git
 ```
 
 Confirm that everything was installed correctly:
 
 ```bash
-$ cd dotfiles
+$ cd ~/.dotfiles
 
 $ ls -al
 ```
