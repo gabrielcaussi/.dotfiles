@@ -110,7 +110,7 @@ $ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 Create the symbolic link:
 
 ```zsh
-$ ln -s ~/.dotfiles/neovim/init.vim ~/.config/nvim/init.vim
+$ ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ```
 
 Finally open NeoVim, press <kbd>Ctrl+D</kbd> and wait for the plugins to be installed.
@@ -148,7 +148,7 @@ $ mkdir ~/.local/share/fonts
 Copy the font to the folder:
 
 ```
-$ cp ~/.dotfiles/fonts/Hack\ Regular\ Nerd\ Font\ Complete\ Mono.ttf ~/.local/share/fonts
+$ cp ~/.dotfiles/.fonts/Hack\ Regular\ Nerd\ Font\ Complete\ Mono.ttf ~/.local/share/fonts
 ```
 
 ## Themes and Icons
