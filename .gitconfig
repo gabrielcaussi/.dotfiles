@@ -1,0 +1,25 @@
+[user]
+    name = gabrielcaussi
+    email = gcaussi@gmail.com
+
+[color]
+    diff = auto
+    grep = auto
+    interactive = auto
+    status = auto
+    branch = auto
+    status = auto
+
+[core]
+    editor = nvim
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    df = diff
+    lg = log -pgit ps
+    co = checkout
+    pom = pull origin master
+    ps = push
+    pl = pull

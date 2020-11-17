@@ -1,0 +1,82 @@
+configuration {
+    display-drun: "Apps";
+    display-window: "Window";
+    show-icons :true;
+}
+ 
+* {
+    lines: 15;
+    columns: 1;
+    background-color: #262626;
+    border-color: #262626;
+    text-color: #000000;
+    font: "Hack 16";
+}
+ 
+#window {
+    border: 2px;
+    border-color: #009185;
+    border-radius: 2px;
+    padding: 50;
+    width: 28%;
+    height: 50%;
+}
+ 
+#mainbox {
+    background-color: #262626;
+    children: [inputbar, listview];
+    spacing: 10px;
+    /*margin: 20%;*/
+    padding: 30px 0;
+    border: 1px;
+    border-color: @base0D;
+}
+ 
+#listview {
+    background-color: #262626;
+    fixed-height: 0;
+    border: 0px;
+    spacing: 5px;
+    scrollbar: false;
+    padding: 10px 10px 0px;
+}
+ 
+#element {
+    background-color: #4E4E4E;
+    border: 0;
+    border-radius: 15px;
+    padding: 5 0  5 10 ;
+}
+ 
+#element selected {
+    background-color: #009185;
+    text-color: #000000;
+}
+ 
+#inputbar {
+    children: [ entry,case-indicator ];
+    background-color: #262626;
+    padding: 0 0 0 14;
+}
+
+#case-indicator {
+    background-color: #262626;
+    spacing: 0;
+}
+
+#entry {
+    background-color: #FFFFFF;
+    spacing: 0;
+}
+
+#prompt {
+    background-color: #FFFFFF;
+    spacing: 0;
+}
+ 
+#textbox-prompt-colon {
+    background-color: #FFFFFF;
+    expand: false;
+    str: ":";
+    margin: 0px 0.3em 0em 0em ;
+}
