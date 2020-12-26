@@ -2,7 +2,7 @@
 
 My dotfiles for web development with kitty, zsh, neovim, tmux and Live-server.
 
-![Desktop](/screenshots/desktop.png)
+![Desktop](/screenshots/bspwm-gabrielcaussi.png)
 
 ## Install programs
 
