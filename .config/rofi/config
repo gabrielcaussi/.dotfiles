@@ -1,1 +1,3 @@
-rofi.theme: ~/.config/rofi/custom.rasi
+# set rofi theme
+rofi.theme: ~/.config/rofi/gruvbox.rasi
+

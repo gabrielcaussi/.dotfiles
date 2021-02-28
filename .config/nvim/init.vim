@@ -1,8 +1,11 @@
+" Author: Gabriel Caussi
+" Source: https://github.com/gabrielcaussi/dotfiles
+
 " --------------- Vim-Plug ---------------
 
 call plug#begin()
 
-    Plug 'tomasr/molokai'
+    Plug 'morhetz/gruvbox'
     Plug 'preservim/nerdtree'
     Plug 'preservim/nerdcommenter'
     Plug 'ryanoasis/vim-devicons'
@@ -10,12 +13,7 @@ call plug#begin()
     Plug 'yggdroot/indentline'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'sheerun/vim-polyglot'
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'vim-scripts/AutoComplPop'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'terryma/vim-multiple-cursors'
     Plug 'ap/vim-css-color'
 
 call plug#end()
@@ -23,15 +21,11 @@ call plug#end()
 " --------------- Basic Setup ---------------
 
 syntax on
-
 set confirm
-set title
-set number
-set relativenumber
+set number relativenumber
 set mouse=a
 set lazyredraw
-set nocursorline
-set scrolloff=999
+set cursorline
 set clipboard=unnamedplus
 set colorcolumn=80
 set hlsearch
@@ -54,9 +48,16 @@ set autoread
 
 " --------------- Plugins Settings ---------------
 
-" Theme and font
-colorscheme molokai
+" Theme
 set termguicolors
+colorscheme gruvbox
+set background=dark
+let gruvbox_contrast_dark='medium'
+let gruvbox_bold=1
+let gruvbox_italic=1
+let gruvbox_italicize_comments=1
+let gruvbox_invert_tabline=1
+let gruvbox_invert_indent_guides=1
 
 " NERDTree
 let NERDTreeShowHidden = 1
@@ -78,17 +79,12 @@ let g:identLine_enabled=1
 nnoremap <c-k> :IndentLinesToggle<CR>
 
 " Airline
-let g:airline_theme='minimalist'
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
-
-" Ctrlp.vim
-let g:ctrlp_custom_ignore = '\v[\/]\.(swp|zip)$'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_show_hidden = 1
 
 " --------------- Keyboard Shortcuts ---------------
 
@@ -111,3 +107,4 @@ nnoremap w :write<CR>
 nnoremap <c-q> :q!<CR>
 nnoremap <c-s> :wq<CR>
 nnoremap <M-d> :PlugInstall<CR>
+
