@@ -11,3 +11,21 @@ $ sudo pacman -S xorg-xset bspwm sxhkd kitty rofi feh neovim nautilus flameshot 
 
 $ yay -S polybar
 ```
+
+| Distro       | Void Linux     | Config  |
+|--------------|----------------|---------|
+| TWM          | BSPWM          |   |
+| Bar          | Polybar        |   |
+| Shell        | ZSH            |   |
+| Terminal     | Kitty          |   |
+| Text Editor  | Neovim         |   |
+| File Manager | Nemo           |   |
+| Menu         | Rofi           |   |
+| player	     | Playerctl      |   |
+| browser	     | Firefox        |   |
+| gtk theme	   | Dracula        |   |
+| qt themes	   | Dracula        |   |
+| composer	   | - - -          |   |
+| sound	       | Pulseaudio     |   |
+| network	     | NetworkManager |   |
+| wallpapers	 | feh            |   |
