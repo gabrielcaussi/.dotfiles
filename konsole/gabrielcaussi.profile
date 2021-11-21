@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=NeoSolarized
-Font=JetBrains Mono,10,-1,5,57,0,0,0,0,0,Medium
+Font=JetBrainsMono Nerd Font,11,-1,5,50,0,0,0,0,0
 LineSpacing=0
 TabColor=27,30,32,0
 UseFontLineChararacters=false
@@ -14,7 +14,7 @@ UseCustomCursorColor=true
 
 [General]
 Command=/usr/bin/bash
-DimWhenInactive=true
+DimWhenInactive=false
 InvertSelectionColors=false
 Name=gabrielcaussi
 Parent=FALLBACK/
