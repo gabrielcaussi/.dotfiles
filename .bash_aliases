@@ -3,6 +3,7 @@
 # My Aliases
 alias q='exit'
 alias ..='cd ..'
+alias ls='ls --color=auto'
 alias ll='ls -al'
 alias vim='nvim'
 alias nametmux='tmux new -s'
