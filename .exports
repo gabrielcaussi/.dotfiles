@@ -15,10 +15,3 @@ export BROWSER=google-chrome-stable
 
 # editor
 export EDITOR=nvim
-
-# Agnoster theme
-export THEME=$HOME/.agnoster.bash
-if [[ -f $THEME ]]; then
-  export DEFAULT_USER=`whoami`
-  source $THEME
-fi

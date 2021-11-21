@@ -440,3 +440,64 @@ bash
 exit
 vim .bashrc
 exit
+q
+exit
+exit
+nvim .dotfiles/.exports 
+nvim .dotfiles/.bash
+nvim .dotfiles/.bashrc
+clear
+cd .dotfiles/
+clear
+ll
+ls -al
+cat install.sh 
+clear
+ls -al
+ln -sf ~/.dotfiles/.agnoster.bash ~
+ln -sf ~/.dotfiles/.bash_aliases ~
+ln -sf ~/.dotfiles/.bash_history ~
+ln -sf ~/.dotfiles/.bash_profile ~
+ln -sf ~/.dotfiles/.bashrc ~
+ln -sf ~/.dotfiles/.exports ~
+bash
+exit
+git status
+git add .
+git commit -m "Update bash config"
+git push origin main
+cd
+ls -al
+clear
+vim .bash_prompt
+bash
+vim .bashrc
+bash
+exit
+exit
+ll
+cd dotfiles/
+cd
+vim .agnoster.bash 
+rm .bash_prompt 
+clear
+vim .bashrc
+bash
+vim .dotfiles/dev-tmux.sh 
+rm .dotfiles/dev-tmux.sh 
+bash
+exit
+exit
+vim .bashrc
+vim .exports 
+cd .dotfiles/
+git status
+cd ..
+clear
+vim .tmux.conf 
+dev
+retmux Developer
+neofetch
+ll
+clear
+vimconf

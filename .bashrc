@@ -18,7 +18,7 @@ shopt -s nocaseglob
 
 # load prompt
 # shellcheck source=/dev/null
-#[[ -f "$HOME/.bash_prompt" ]] && source "$HOME/.bash_prompt"
+[[ -f "$HOME/.bash_prompt" ]] && source "$HOME/.bash_prompt"
 
 # enable bash completion
 # Use bash-completion, if available
