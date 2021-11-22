@@ -51,6 +51,7 @@ vim.wo.relativenumber = true
 vim.wo.colorcolumn = "120"
 -- vim.wo.signcolumn = 'no'
 vim.o.cursorline = true
+vim.o.wrap = false
 vim.o.confirm = true
 vim.o.clipboard = "unnamedplus"
 vim.o.tabstop = 2
@@ -78,6 +79,10 @@ vim.cmd([[ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") 
 vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.cmd('let g:neosolarized_termtrans=1')
+vim.cmd('let g:neosolarized_bold = 1')
+vim.cmd('let g:neosolarized_underline = 1')
+vim.cmd('let g:neosolarized_italic = 1')
+vim.cmd('let g:neosolarized_termBoldAsBright = 1')
 vim.cmd('colorscheme NeoSolarized')
 vim.cmd[[au VimEnter * highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=#Grey40]]
 
@@ -94,3 +99,11 @@ vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
+
+-- Keyboard Shortcuts
+vim.cmd[[let mapleader="\<space>"]]
+vim.cmd('nnoremap <leader>v :vsplit<CR>')
+vim.cmd('nnoremap <leader>h :split<CR>')
+vim.cmd('nnoremap <leader>; A;<ESC>')
+vim.cmd('nnoremap <c-b> <ESC>:NvimTreeToggle<CR>')
+vim.cmd('map ; gc')
