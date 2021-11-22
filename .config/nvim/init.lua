@@ -45,22 +45,20 @@ require('packer').startup(function()
   }
 end)
 
---My configs
+-- My configs
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.colorcolumn = "120"
-vim.wo.signcolumn = 'yes'
+-- vim.wo.signcolumn = 'no'
 vim.o.cursorline = true
 vim.o.confirm = true
-vim.o.title = true
-vim.o.titlestring = "%{join(split(getcwd(), '/')[-2:], '/')}"
 vim.o.clipboard = "unnamedplus"
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
 vim.o.tabstop = 2
+vim.o.softtabstop = 0
+vim.o.expandtab = false
+vim.o.shiftwidth = 2
 vim.o.autoindent = true
 vim.o.smartindent = true
-vim.o.expandtab = true
 vim.o.inccommand = 'nosplit'
 vim.o.hlsearch = true
 vim.o.hidden = true
@@ -68,27 +66,30 @@ vim.o.mouse = 'a'
 vim.o.breakindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.updatetime = 250
+vim.o.updatetime = 750
 vim.o.encoding = 'UTF-8'
 vim.o.autoread = true
+vim.o.scrolloff = 999
 vim.opt.undofile = true
 vim.opt.syntax = 'enable'
+vim.cmd([[ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
 
--- Style
+-- Theme
 vim.o.termguicolors = true
-vim.o.background = "dark" -- or "light" for light mode
+vim.o.background = "dark"
+vim.cmd('let g:neosolarized_termtrans=1')
 vim.cmd('colorscheme NeoSolarized')
-vim.cmd[[au VimEnter * hi Normal guibg=NONE ctermbg=NONE]]
+vim.cmd[[au VimEnter * highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=#Grey40]]
 
---Set statusbar
+-- Statusbar
 vim.g.lightline = {
  colorscheme = 'solarized',
  active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
  component_function = { gitbranch = 'fugitive#head' },
 }
 
---Map blankline
-vim.g.indent_blankline_char = '┊'
+-- Blankline
+-- vim.g.indent_blankline_char = '┊'
 vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
