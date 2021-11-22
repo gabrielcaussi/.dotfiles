@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Project     : Fedora KDE Plasma
 # Description : Workstation running Fedora Linux KDE Plasma
@@ -6,34 +6,92 @@
 # Github      : https://github.com/gabrielcaussi
 # Linkedin    : https://www.linkedin.com/in/gabrielcaussi
 
-## Update System
-sudo dnf update -y
+# -------------------- VARIABLES -------------------- #
+URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-## Install wifi module for Thinkpad E431 (BCM43142)
-sudo dnf install broadcom-wl -y
+PROGRAMS_LIST=(
+	bash-completion
+	curl
+	ffmpeg
+	g++
+	gcc
+	git
+	htop
+	hugo
+	neofetch
+	neovim
+	obs-studio
+	tmux
+	util-linux
+	wget
+	zsh
+)
 
-## Install dependencies and softwares
-sudo dnf install g++ gcc util-linux ffmpeg wget curl git neofetch htop zsh tmux neovim hugo -y
+# -------------------- FUNCTIONS -------------------- #
+verify_os() {
+  if [ ! "$(cat /etc/os-release | grep NAME=Fedora)" == "NAME=Fedora" ]; then
+    echo "Sorry, this script is intended only for Fedora Linux!"
+    exit 1
+  fi
+}
 
-## Install Google Chrome
-##wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-##sudo apt install ./google-chrome-stable_current_amd64.deb
-##rm google-chrome-stable_current_amd64.deb
+ask_for_sudo() {
+	sudo -v &>/dev/null
+	# Update existing `sudo` time stamp until this script has finished
+	# https://gist.github.com/cowboy/3118588
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done &>/dev/null &
+}
 
-## Install Visual Studio Code
-# wget https://az764295.vo.msecnd.net/stable/6cba118ac49a1b88332f312a8f67186f7f3c1643/code_1.61.2-1634656828_amd64.deb
-# sudo apt install ./code_1.61.2-1634656828_amd64.deb
-# rm code_1.61.2-1634656828_amd64.deb
+system_requerements() {
+	# Update system
+	dnf update -y
 
-## Git
-ln -sf ~/.dotfiles/.gitconfig ~/
+	# Install Non-Free repositories
+	dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+		https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-## Tmux
-ln -sf ~/.dotfiles/.tmux.conf ~/
+	# Update system again
+	dnf update -y
 
-## Fonts
-ln -sf ~/.dotfiles/.fonts ~/
+	# Install wifi module for Thinkpad E431 (BCM43142)
+	dnf install broadcom-wl -y
+}
 
-## Plasma setup
-plasma-apply-lookandfeel -a org.kde.breezedark.desktop
-plasma-apply-wallpaperimage ~/.dotfiles/wallpaper.png
+install_softwares() {
+	dnf install ${PROGRAMS_LIST[@]}
+}
+
+configure_softwares() {
+	# Git
+	ln -sf ~/.dotfiles/.gitconfig ~/
+
+	# Tmux
+	ln -sf ~/.dotfiles/.tmux.conf ~/
+
+	# Fonts
+	ln -sf ~/.dotfiles/.fonts ~/
+
+	# Plasma setup
+	plasma-apply-lookandfeel -a org.kde.breezedark.desktop
+	plasma-apply-wallpaperimage ~/.dotfiles/wallpaper.png
+
+# -------------------- MAIN -------------------- #
+main() {
+	verify_os
+
+	ask_for_sudo
+
+	system_requerements
+
+	install_softwares
+
+	configure_softwares
+
+	echo "Success! Please restart the terminal to see the changes!"
+}
+
+main
