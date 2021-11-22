@@ -7,8 +7,6 @@
 # Linkedin    : https://www.linkedin.com/in/gabrielcaussi
 
 # -------------------- VARIABLES -------------------- #
-URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
-
 PROGRAMS_LIST=(
 	bash-completion
 	curl
@@ -27,12 +25,16 @@ PROGRAMS_LIST=(
 	zsh
 )
 
+URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+
 # -------------------- FUNCTIONS -------------------- #
 verify_os() {
-  if [ ! "$(cat /etc/os-release | grep NAME=Fedora)" == "NAME=Fedora" ]; then
-    echo "Sorry, this script is intended only for Fedora Linux!"
-    exit 1
-  fi
+	if [ -x "$(command -v dnf)" ] && grep -q ^NAME=Fedora /etc/os-release; then
+  	echo "Installing softwares and settings:"
+	else
+		echo "Sorry, this script is intended only for Fedora Linux!"
+  	exit 1
+	fi
 }
 
 ask_for_sudo() {
@@ -63,21 +65,51 @@ system_requerements() {
 
 install_softwares() {
 	dnf install ${PROGRAMS_LIST[@]}
+
+  dnf install ${URL_GOOGLE_CHROME}
+}
+
+konsole_setup() {
+}
+
+bash_setup() {
+}
+
+neovim_setup() {
+}
+
+git_setup() {
+	ln -sf ~/.dotfiles/.gitconfig ~/
+}
+
+tmux_setup() {
+	ln -sf ~/.dotfiles/.tmux.conf ~/
+}
+
+fonts_setup() {
+	ln -sf ~/.dotfiles/.fonts ~/
+}
+
+plasma_setup() {
+	plasma-apply-lookandfeel -a org.kde.breezedark.desktop
+	plasma-apply-wallpaperimage ~/.dotfiles/wallpaper.png
 }
 
 configure_softwares() {
-	# Git
-	ln -sf ~/.dotfiles/.gitconfig ~/
+	konsole_setup
 
-	# Tmux
-	ln -sf ~/.dotfiles/.tmux.conf ~/
+	bash_setup
 
-	# Fonts
-	ln -sf ~/.dotfiles/.fonts ~/
+	neovim_setup
 
-	# Plasma setup
-	plasma-apply-lookandfeel -a org.kde.breezedark.desktop
-	plasma-apply-wallpaperimage ~/.dotfiles/wallpaper.png
+	git_setup
+
+	tmux_setup
+
+	fonts_setup
+
+	plasma_setup
+}
 
 # -------------------- MAIN -------------------- #
 main() {
