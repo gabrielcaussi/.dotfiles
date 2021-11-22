@@ -2,14 +2,14 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=NeoSolarized
-Font=JetBrainsMono Nerd Font,11,-1,5,50,0,0,0,0,0
+Font=FiraCode Nerd Font,11,-1,5,50,0,0,0,0,0
 LineSpacing=0
 TabColor=27,30,32,0
 UseFontLineChararacters=false
 
 [Cursor Options]
 CursorShape=0
-CustomCursorColor=147,161,161
+CustomCursorColor=255,255,255
 UseCustomCursorColor=true
 
 [General]
@@ -19,7 +19,7 @@ InvertSelectionColors=false
 Name=gabrielcaussi
 Parent=FALLBACK/
 ShowTerminalSizeHint=true
-TerminalCenter=false
+TerminalCenter=true
 TerminalMargin=1
 
 [Interaction Options]
@@ -32,7 +32,7 @@ UnderlineFilesEnabled=true
 [Scrolling]
 HighlightScrolledLines=true
 HistoryMode=1
-HistorySize=500
+HistorySize=1000
 ReflowLines=true
 ScrollBarPosition=2
 ScrollFullPage=true
@@ -40,3 +40,4 @@ ScrollFullPage=true
 [Terminal Features]
 BellMode=3
 BlinkingCursorEnabled=false
+VerticalLine=false
