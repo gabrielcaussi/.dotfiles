@@ -1,6 +1,10 @@
 # Fedora KDE Plasma Workstation
 
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/desktop.png)
+![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/desktop1.png)
+
+![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/bash-tmux1.png)
+
+![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/neovim-tmux1.png)
 
 ## Step 1
 
