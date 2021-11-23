@@ -1,29 +1,3 @@
-# Fedora KDE Plasma Workstation
+# Fedora Workstation
 
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/desktop1.png)
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/bash-tmux1.png)
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/neovim-tmux1.png)
-
-## Step 1
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/gtk-setup1.png)
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/gtk-setup2.png)
-
-## Step 2
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/window-setup1.png)
-
-## Step 3
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/screen-locking-setup1.png)
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/screen-locking-setup2.png)
-
-## Step 4
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/sddm-setup1.png)
-
-![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/sddm-setup2.png)
+![info](link-image)
