@@ -18,6 +18,7 @@ PROGRAMS_LIST=(
 	neofetch
 	neovim
 	obs-studio
+	papirus-icon-theme
 	tmux
 	util-linux
 	wget
@@ -89,6 +90,11 @@ fonts_setup() {
 }
 
 gnome_setup() {
+	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+	gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+	gsettings set org.gnome.desktop.background picture-uri ~/.dotfiles/wallpapers/wallpaper.png
+	gsettings set org.gnome.desktop.screensaver picture-uri ~/.dotfiles/wallpapers/wallpaper.png
+	gsettings set org.gnome.desktop.interface show-battery-percentage true
 }
 
 configure_softwares() {
