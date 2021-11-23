@@ -18,6 +18,7 @@ PROGRAMS_LIST=(
 	neofetch
 	neovim
 	obs-studio
+	papirus-icon-theme
 	tmux
 	util-linux
 	wget
