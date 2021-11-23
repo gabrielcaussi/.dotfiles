@@ -8,11 +8,10 @@
 
 # -------------------- VARIABLES -------------------- #
 PROGRAMS_LIST=(
+	alacritty
 	bash-completion
 	curl
 	ffmpeg
-	g++
-	gcc
 	git
 	htop
 	hugo
@@ -22,7 +21,6 @@ PROGRAMS_LIST=(
 	tmux
 	util-linux
 	wget
-	zsh
 )
 
 URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
