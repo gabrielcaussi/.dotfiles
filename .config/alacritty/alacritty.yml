@@ -33,6 +33,8 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+custom_cursor_colors: true
+
 selection:
   save_to_clipboard: true
 
@@ -71,6 +73,6 @@ colors:
     cyan:    '0x2aa198'
     white:   '0x93a1a1'
 
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
+  cursor:
+    text:   '0x000000'
+    cursor: '0xffffff'
