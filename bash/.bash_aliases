@@ -2,6 +2,7 @@
 
 # My Aliases
 alias q='exit'
+alias :q='exit'
 alias ..='cd ..'
 alias ls='ls --color=auto'
 alias ll='ls -al'

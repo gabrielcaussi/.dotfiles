@@ -70,9 +70,13 @@ vim.o.smartcase = true
 vim.o.updatetime = 750
 vim.o.encoding = 'UTF-8'
 vim.o.autoread = true
-vim.g.scrolloff = 5
+vim.o.scrolloff = 5
 vim.opt.undofile = true
 vim.opt.syntax = 'enable'
+
+vim.opt.title = true
+vim.opt.titlestring = "%{join(split(getcwd(), '/')[-2:], '/')}"
+
 vim.cmd([[ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
 
 -- Theme

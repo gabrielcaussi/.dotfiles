@@ -68,7 +68,7 @@ install_softwares() {
   dnf install ${URL_GOOGLE_CHROME}
 }
 
-alacritty_setup() {
+terminal_setup() {
 }
 
 bash_setup() {
@@ -95,10 +95,13 @@ gnome_setup() {
 	gsettings set org.gnome.desktop.background picture-uri ~/.dotfiles/wallpapers/wallpaper.png
 	gsettings set org.gnome.desktop.screensaver picture-uri ~/.dotfiles/wallpapers/wallpaper.png
 	gsettings set org.gnome.desktop.interface show-battery-percentage true
+	gsettings set org.gnome.desktop.interface clock-show-date true
+	gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
+	gsettings set org.gnome.desktop.interface font-name "Roboto 10"
 }
 
 configure_softwares() {
-	alacritty_setup
+	terminal_setup
 
 	bash_setup
 
