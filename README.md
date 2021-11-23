@@ -1,3 +1,3 @@
 # Fedora Workstation
 
-![info](link-image)
+![Desktop](https://raw.githubusercontent.com/gabrielcaussi/.dotfiles/main/screenshots/desktop.png)
