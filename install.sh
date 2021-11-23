@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Project     : Fedora KDE Plasma
-# Description : Workstation running Fedora Linux KDE Plasma
+# Project     : Fedora Workstation
+# Description : Fedora Workstation for Software Engineer
 # Developer   : Gabriel Caussi
 # Github      : https://github.com/gabrielcaussi
 # Linkedin    : https://www.linkedin.com/in/gabrielcaussi
@@ -69,7 +69,7 @@ install_softwares() {
   dnf install ${URL_GOOGLE_CHROME}
 }
 
-konsole_setup() {
+alacritty_setup() {
 }
 
 bash_setup() {
@@ -90,13 +90,11 @@ fonts_setup() {
 	ln -sf ~/.dotfiles/.fonts ~/
 }
 
-plasma_setup() {
-	plasma-apply-lookandfeel -a org.kde.breezedark.desktop
-	plasma-apply-wallpaperimage ~/.dotfiles/wallpaper.png
+gnome_setup() {
 }
 
 configure_softwares() {
-	konsole_setup
+	alacritty_setup
 
 	bash_setup
 
@@ -108,7 +106,7 @@ configure_softwares() {
 
 	fonts_setup
 
-	plasma_setup
+	gnome_setup
 }
 
 # -------------------- MAIN -------------------- #
