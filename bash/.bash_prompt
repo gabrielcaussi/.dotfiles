@@ -16,9 +16,9 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 fi
 
 # Symbols
-prompt_symbol=""
-prompt_symbol_true="✔"
-prompt_symbol_false="✗"
+prompt_symbol="$"
+prompt_clean_symbol="✔"
+prompt_dirty_symbol="✗"
 
 function prompt_command() {
   # Local or SSH session?
@@ -41,20 +41,14 @@ function prompt_command() {
 
     # Format Git info
     if [ -n "$dirty" ]; then
-      git_prompt="$color_white  $color_red$branch $color_red$prompt_symbol_false$color_off"
+      git_prompt="$color_red$branch$prompt_dirty_symbol$color_off"
     else
-      git_prompt="$color_white  $color_red$branch $color_green$prompt_symbol_true$color_off"
+      git_prompt="$color_green$branch$prompt_clean_symbol$color_off"
     fi
   fi
 
   # Format prompt
-  first_line="\n➜ $color_blue$bold\w$color_off$bold$git_prompt"
-  PS1="${first_line}\n${color_green}${prompt_symbol}${color_off} "
-
-	# Terminal title
-	local title="$(basename "$PWD")"
-	[ -n "$remote" ] && title="$title \xE2\x80\x94 $HOSTNAME"
-	echo -ne "\033]0;$title"; echo -ne "\007"
+  PS1="$color_blue$bold\w $color_white$bold($color_red$bold$git_prompt$color_green$color_white$bold) $prompt_symbol$color_off "
 }
 
 # Show awesome prompt only if Git is istalled
