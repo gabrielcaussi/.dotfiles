@@ -48,7 +48,7 @@ function prompt_command() {
   fi
 
   # Format prompt
-  PS1="$color_blue$bold\w $color_white$bold($color_red$bold$git_prompt$color_green$color_white$bold) $prompt_symbol$color_off "
+	PS1="\n$color_blue$bold\w $color_red$bold$git_prompt\n$color_green$prompt_symbol$color_off "
 }
 
 # Show awesome prompt only if Git is istalled

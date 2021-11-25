@@ -34,7 +34,6 @@ set_profile_colors() {
 
   local bg_color_file=$scheme_dir/bg_color
   local fg_color_file=$scheme_dir/fg_color
-  local bd_color_file=$scheme_dir/bd_color
 	local cursor_bg_color_file=$scheme_dir/cursor_bg_color
 	local cursor_fg_color_file=$scheme_dir/cursor_fg_color
 	local font_file=$scheme_dir/font
@@ -45,7 +44,6 @@ set_profile_colors() {
 
     dconf write $profile_path/palette "$(to_dconf < $scheme_dir/palette)"
 
-    dconf write $profile_path/bold-color "'$(cat $bd_color_file)'"
     dconf write $profile_path/background-color "'$(cat $bg_color_file)'"
     dconf write $profile_path/foreground-color "'$(cat $fg_color_file)'"
     dconf write $profile_path/cursor-background-color "'$(cat $cursor_bg_color_file)'"
@@ -57,14 +55,12 @@ set_profile_colors() {
 		dconf write $profile_path/cursor-colors-set "true"
     dconf write $profile_path/audible-bell "false"
 		dconf write $profile_path/use-theme-colors "false"
-    dconf write $profile_path/bold-color-same-as-fg "false"
 
   else
     local profile_path=$gconfdir/$profile
 
     gconftool-2 -s -t string $profile_path/palette "$(to_gconf < $scheme_dir/palette)"
 
-    gconftool-2 -s -t string $profile_path/bold_color $(cat $bd_color_file)
     gconftool-2 -s -t string $profile_path/background_color $(cat $bg_color_file)
     gconftool-2 -s -t string $profile_path/foreground_color $(cat $fg_color_file)
     gconftool-2 -s -t string $profile_path/cursor-background-color $(cat $cursor_bg_color_file)
@@ -76,7 +72,6 @@ set_profile_colors() {
 		gconftool-2 -s -t bool $profile_path/cursor-colors-set true
 		gconftool-2 -s -t bool $profile_path/audible-bell false
     gconftool-2 -s -t bool $profile_path/use_theme_colors false
-    gconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
   fi
 }
 
