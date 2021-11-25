@@ -17,7 +17,7 @@ fi
 
 # Symbols
 prompt_symbol="$"
-prompt_clean_symbol="✔"
+prompt_clean_symbol=""
 prompt_dirty_symbol="✗"
 
 function prompt_command() {
@@ -43,7 +43,7 @@ function prompt_command() {
     if [ -n "$dirty" ]; then
       git_prompt="$color_red$branch $color_yellow$prompt_dirty_symbol$color_off"
     else
-      git_prompt="$color_red$branch $color_green$prompt_clean_symbol$color_off"
+      git_prompt="$color_red$branch $prompt_clean_symbol$color_off"
     fi
   fi
 
