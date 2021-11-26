@@ -16,11 +16,10 @@ PROGRAMS_LIST=(
 	htop
 	hugo
 	neofetch
-	neovim
 	obs-studio
-	papirus-icon-theme
 	tmux
 	util-linux
+  vim
 	wget
 )
 
@@ -68,13 +67,25 @@ install_softwares() {
   dnf install ${URL_GOOGLE_CHROME}
 }
 
-terminal_setup() {
+alacritty_setup() {
+  ln -sf ~/.dotfiles/alacritty/ ~/.config
 }
 
 bash_setup() {
+  ln -sf ~/.dotfiles/.bashrc ~/
+  ln -sf ~/.dotfiles/.bash_aliases ~/
+  ln -sf ~/.dotfiles/.bash_profile ~/
+  ln -sf ~/.dotfiles/.bash_prompt ~/
+  ln -sf ~/.dotfiles/.exports ~/
 }
 
-neovim_setup() {
+vim_setup() {
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  ln -sf ~/.dotfiles/.vimrc ~/
+
+  vim +PlugInstall +qall
 }
 
 git_setup() {
@@ -90,22 +101,25 @@ fonts_setup() {
 }
 
 gnome_setup() {
-	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+  ln -sf ~/.dotfiles/.themes ~/
+  ln -sf ~/.dotfiles/.icons ~/
+
+	gsettings set org.gnome.desktop.interface gtk-theme "Nordic-darker-v40"
 	gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+  gsettings set org.gnome.desktop.interface cursor-theme 'Nordzy-cursors'
 	gsettings set org.gnome.desktop.background picture-uri ~/.dotfiles/wallpapers/wallpaper.png
 	gsettings set org.gnome.desktop.screensaver picture-uri ~/.dotfiles/wallpapers/wallpaper.png
 	gsettings set org.gnome.desktop.interface show-battery-percentage true
 	gsettings set org.gnome.desktop.interface clock-show-date true
 	gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
-	gsettings set org.gnome.desktop.interface font-name "Roboto 10"
 }
 
 configure_softwares() {
-	terminal_setup
+	alacritty_setup
 
 	bash_setup
 
-	neovim_setup
+	vim_setup
 
 	git_setup
 
