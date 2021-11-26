@@ -13,6 +13,7 @@ PROGRAMS_LIST=(
 	curl
 	ffmpeg
 	git
+  gnome-shell-extension-user-theme
 	htop
 	hugo
 	neofetch
@@ -111,7 +112,7 @@ gnome_setup() {
 	gsettings set org.gnome.desktop.screensaver picture-uri ~/.dotfiles/wallpapers/wallpaper.png
 	gsettings set org.gnome.desktop.interface show-battery-percentage true
 	gsettings set org.gnome.desktop.interface clock-show-date true
-	gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
+	gsettings set org.gnome.desktop.interface text-scaling-factor 0.8
 }
 
 configure_softwares() {
