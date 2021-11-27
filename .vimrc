@@ -114,7 +114,11 @@ set cursorline
 set confirm
 set clipboard="unnamedplus"
 set mouse=a
-set undofile
+
+if has('persistent_undo')         "check if your vim version supports
+  set undodir=$HOME/.vim/undo     "directory where the undo files will be stored
+  set undofile                    "turn on the feature
+endif
 
 " Set colorscheme
 colorscheme nord
@@ -141,7 +145,7 @@ let NERDTreeStatusline = ''
 
 " Airline
 let g:airline_theme='nord'
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1

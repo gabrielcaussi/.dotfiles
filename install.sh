@@ -76,7 +76,7 @@ bash_setup() {
   ln -sf ~/.dotfiles/.bashrc ~/
   ln -sf ~/.dotfiles/.bash_aliases ~/
   ln -sf ~/.dotfiles/.bash_profile ~/
-  ln -sf ~/.dotfiles/.bash_prompt ~/
+  ln -sf ~/.dotfiles/.bash_agnoster ~/
   ln -sf ~/.dotfiles/.exports ~/
 }
 
@@ -87,6 +87,8 @@ vim_setup() {
   ln -sf ~/.dotfiles/.vimrc ~/
 
   vim +PlugInstall +qall
+
+  mkdir ~/.vim/undo
 }
 
 git_setup() {

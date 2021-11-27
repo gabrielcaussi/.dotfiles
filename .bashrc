@@ -16,10 +16,6 @@ shopt -s nocaseglob
 # shellcheck source=/dev/null
 [[ -f "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
 
-# load prompt
-# shellcheck source=/dev/null
-[[ -f "$HOME/.bash_prompt" ]] && source "$HOME/.bash_prompt"
-
 # enable bash completion
 # Use bash-completion, if available
 # shellcheck source=/dev/null

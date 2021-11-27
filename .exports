@@ -16,6 +16,13 @@ export BROWSER=google-chrome-stable
 # editor
 export EDITOR=vim
 
+# agnoster theme
+export THEME=$HOME/.bash_agnoster
+if [[ -f $THEME ]]; then
+  export DEFAULT_USER=`whoami`
+  source $THEME
+fi
+
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
