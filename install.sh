@@ -74,7 +74,7 @@ install_softwares() {
 }
 
 terminal_setup() {
-	~/.dotfiles/gnome-terminal/src/nord.sh
+	~/.dotfiles/gnome-terminal/nord.sh
 }
 
 bash_setup() {
