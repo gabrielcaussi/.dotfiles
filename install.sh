@@ -73,8 +73,8 @@ install_softwares() {
 	dnf install code
 }
 
-alacritty_setup() {
-  ln -sf ~/.dotfiles/alacritty/ ~/.config
+terminal_setup() {
+	~/.dotfiles/gnome-terminal/src/nord.sh
 }
 
 bash_setup() {
@@ -123,7 +123,7 @@ gnome_setup() {
 }
 
 configure_softwares() {
-	alacritty_setup
+	terminal_setup
 
 	bash_setup
 
