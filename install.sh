@@ -66,6 +66,11 @@ install_softwares() {
 	dnf install ${PROGRAMS_LIST[@]}
 
   dnf install ${URL_GOOGLE_CHROME}
+
+	rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+	dnf check-update
+	dnf install code
 }
 
 alacritty_setup() {
@@ -73,11 +78,11 @@ alacritty_setup() {
 }
 
 bash_setup() {
-  ln -sf ~/.dotfiles/.bashrc ~/
-  ln -sf ~/.dotfiles/.bash_aliases ~/
-  ln -sf ~/.dotfiles/.bash_profile ~/
-  ln -sf ~/.dotfiles/.bash_agnoster ~/
-  ln -sf ~/.dotfiles/.exports ~/
+  ln -sf ~/.dotfiles/bash/.bashrc ~/
+  ln -sf ~/.dotfiles/bash/.bash_aliases ~/
+  ln -sf ~/.dotfiles/bash/.bash_profile ~/
+  ln -sf ~/.dotfiles/bash/.bash_agnoster ~/
+  ln -sf ~/.dotfiles/bash/.exports ~/
 }
 
 vim_setup() {
@@ -114,7 +119,7 @@ gnome_setup() {
 	gsettings set org.gnome.desktop.screensaver picture-uri ~/.dotfiles/wallpapers/wallpaper.png
 	gsettings set org.gnome.desktop.interface show-battery-percentage true
 	gsettings set org.gnome.desktop.interface clock-show-date true
-	gsettings set org.gnome.desktop.interface text-scaling-factor 0.8
+	gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
 }
 
 configure_softwares() {
